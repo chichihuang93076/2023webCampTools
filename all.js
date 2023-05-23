@@ -16,3 +16,14 @@ $(".btn2").on("click", function () {
   console.log(this);
   this.classList.toggle("active");
 });
+
+$(".backtoTop").on("click", () => {
+  gotoTop();
+});
+
+function gotoTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+}
