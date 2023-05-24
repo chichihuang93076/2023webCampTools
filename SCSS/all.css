@@ -205,6 +205,15 @@ h3 {
   width: 162px;
 }
 
+.btn4 {
+  color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+}
+
 .btn {
   display: flex;
   flex-direction: row;
@@ -236,6 +245,7 @@ h3 {
   align-items: center;
   padding: 20px 0px;
   border-bottom: 1px solid #ffffff;
+  margin-bottom: 40px;
 }
 .header .logo {
   width: 200px;
@@ -282,6 +292,9 @@ h3 {
 .serviceTitle h3 {
   width: 33%;
   margin-bottom: 24px;
+}
+.serviceTitle p {
+  width: 66%;
 }
 
 .serviceList {
@@ -478,6 +491,9 @@ h3 {
   display: flex;
   justify-content: flex-end;
 }
+.pagination .paginationList p {
+  font-size: 16px;
+}
 .pagination .paginationList li {
   width: 48px;
 }
@@ -490,6 +506,7 @@ h3 {
   font-size: 14px;
   color: #020202;
   padding: 12px 0px;
+  font-size: 16px;
 }
 .pagination .paginationList li .btn3.active {
   border-radius: 16px;
@@ -567,6 +584,7 @@ h3 {
   color: #ffffff;
   border: none;
   cursor: pointer;
+  font-size: 16px;
 }
 
 .pricebanner {
@@ -585,9 +603,95 @@ h3 {
   align-self: start;
 }
 
+.prodList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 80px 0px 160px 0px;
+}
+
+.prodListCard {
+  width: 49%;
+  border: 1px solid #525252;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+}
+.prodListCard h3 {
+  padding-bottom: 12px;
+}
+.prodListCard .prodDesc {
+  padding: 20px 32px;
+  flex-grow: 1;
+  border-bottom: 1px solid #525252;
+}
+.prodListCard .prodDesc ul {
+  list-style-type: disc;
+}
+.prodListCard .prodPrice {
+  padding: 20px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.useRule {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 160px;
+}
+
+.ruleList {
+  width: 66%;
+  display: flex;
+  flex-direction: column;
+}
+.ruleList .ruleContent {
+  border-bottom: 1px solid #525252;
+  margin-bottom: 40px;
+}
+.ruleList .ruleContent h2 {
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 120%;
+}
+.ruleList .ruleContent p {
+  padding: 24px 0px 40px 0px;
+  font-size: 32px;
+  line-height: 120%;
+}
+
+.questions {
+  display: flex;
+  justify-content: space-between;
+  padding: 160px 0px 160px 0px;
+  border-bottom: 1px solid #ffffff;
+}
+.questions .questionList {
+  width: 66%;
+  display: flex;
+  flex-direction: column;
+}
+.questions .questionList .QA {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px 40px;
+  border: 1px solid #525252;
+  border-radius: 16px;
+  margin-bottom: 16px;
+}
+.questions .questionList .QA P {
+  padding-left: 15px;
+}
+
 @media (max-width: 768px) {
   .container {
     margin: 0px 12px;
+  }
+  .header {
+    margin-bottom: 40px;
   }
   .header .menu .menu-text {
     display: none;
@@ -614,6 +718,7 @@ h3 {
   }
   .serviceTitle p {
     font-size: 32px;
+    width: 100%;
   }
   .serviceListCard {
     width: 100%;
@@ -691,5 +796,47 @@ h3 {
     font-size: 28px;
     width: 70%;
     margin-bottom: 98px;
+  }
+  .products h3 {
+    font-size: 20px;
+  }
+  .prodList {
+    margin: 24px 0px 120px 0px;
+  }
+  .prodListCard {
+    width: 100%;
+  }
+  .useRule {
+    flex-direction: column;
+    margin-bottom: 120px;
+  }
+  .useRule h3 {
+    font-size: 20px;
+    margin-bottom: 48px;
+  }
+  .ruleList {
+    width: 100%;
+  }
+  .ruleList .ruleContent {
+    margin-bottom: 24px;
+  }
+  .ruleList .ruleContent h2 {
+    font-size: 32px;
+  }
+  .ruleList .ruleContent p {
+    font-size: 16px;
+    line-height: 150%;
+  }
+  .questions {
+    flex-direction: column;
+  }
+  .questions h3 {
+    font-size: 20px;
+    line-height: 120%;
+    margin-bottom: 24px;
+  }
+  .questions .questionList {
+    width: 100%;
+    padding: 20px 25px 20px 20px;
   }
 }/*# sourceMappingURL=all.css.map */

@@ -68,6 +68,15 @@ h3 {
   width: 162px;
 }
 
+.btn4 {
+  color: $txt-white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+}
+
 .btn {
   display: flex;
   flex-direction: row;
@@ -100,6 +109,7 @@ h3 {
   align-items: center;
   padding: 20px 0px;
   border-bottom: 1px solid #ffffff;
+  margin-bottom: 40px;
   .logo {
     width: 200px;
   }
@@ -148,6 +158,9 @@ h3 {
   h3 {
     width: 33%;
     margin-bottom: 24px;
+  }
+  p {
+    width: 66%;
   }
 }
 
@@ -362,6 +375,9 @@ h3 {
   .paginationList {
     display: flex;
     justify-content: flex-end;
+    p {
+      font-size: 16px;
+    }
     li {
       width: 48px;
       a.btn3 {
@@ -373,6 +389,7 @@ h3 {
         font-size: 14px;
         color: #020202;
         padding: 12px 0px;
+        font-size: 16px;
       }
       .btn3.active {
         border-radius: 16px;
@@ -454,6 +471,7 @@ h3 {
     color: #ffffff;
     border: none;
     cursor: pointer;
+    font-size: 16px;
   }
 }
 
@@ -475,12 +493,99 @@ h3 {
   }
 }
 
+// product price
+.prodList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 80px 0px 160px 0px;
+}
+
+.prodListCard {
+  width: 49%;
+  border: 1px solid #525252;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+  h3 {
+    padding-bottom: 12px;
+  }
+  .prodDesc {
+    padding: 20px 32px;
+    flex-grow: 1;
+    border-bottom: 1px solid #525252;
+    ul {
+      list-style-type: disc;
+    }
+  }
+  .prodPrice {
+    padding: 20px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+// 使用規範
+.useRule {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 160px;
+}
+
+.ruleList {
+  width: 66%;
+  display: flex;
+  flex-direction: column;
+  .ruleContent {
+    border-bottom: 1px solid #525252;
+    margin-bottom: 40px;
+    h2 {
+      font-weight: bold;
+      font-size: 48px;
+      line-height: 120%;
+    }
+    p {
+      padding: 24px 0px 40px 0px;
+      font-size: 32px;
+      line-height: 120%;
+    }
+  }
+}
+
+//常見問題
+.questions {
+  display: flex;
+  justify-content: space-between;
+  padding: 160px 0px 160px 0px;
+  border-bottom: 1px solid #ffffff;
+  .questionList {
+    width: 66%;
+    display: flex;
+    flex-direction: column;
+    .QA {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 20px 40px;
+      border: 1px solid #525252;
+      border-radius: 16px;
+      margin-bottom: 16px;
+      P {
+        padding-left: 15px;
+      }
+    }
+  }
+}
+
 @media (max-width: 768px) {
   .container {
     margin: 0px 12px;
   }
 
   .header {
+    margin-bottom: 40px;
     .menu {
       .menu-text {
         display: none;
@@ -513,6 +618,7 @@ h3 {
     }
     p {
       font-size: 32px;
+      width: 100%;
     }
   }
   .serviceListCard {
@@ -591,7 +697,8 @@ h3 {
     }
   }
 
-  //   price --------
+  //   price mobile--------
+  // banner
   .pricebanner {
     .pricebannerTitle {
       font-size: 48px;
@@ -602,6 +709,55 @@ h3 {
       font-size: 28px;
       width: 70%;
       margin-bottom: 98px;
+    }
+  }
+
+  //products mobile
+  .products {
+    h3 {
+      font-size: 20px;
+    }
+  }
+  .prodList {
+    margin: 24px 0px 120px 0px;
+  }
+  .prodListCard {
+    width: 100%;
+  }
+  //使用規範mobile
+  .useRule {
+    flex-direction: column;
+    margin-bottom: 120px;
+    h3 {
+      font-size: 20px;
+      margin-bottom: 48px;
+    }
+  }
+  .ruleList {
+    width: 100%;
+    .ruleContent {
+      margin-bottom: 24px;
+      h2 {
+        font-size: 32px;
+      }
+      p {
+        font-size: 16px;
+        line-height: 150%;
+      }
+    }
+  }
+
+  //常見問題
+  .questions {
+    flex-direction: column;
+    h3 {
+      font-size: 20px;
+      line-height: 120%;
+      margin-bottom: 24px;
+    }
+    .questionList {
+      width: 100%;
+      padding: 20px 25px 20px 20px;
     }
   }
 }
