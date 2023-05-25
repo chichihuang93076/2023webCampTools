@@ -686,6 +686,19 @@ h3 {
   padding-left: 15px;
 }
 
+.navbar-collapse {
+  display: none; /* 在電腦版時不顯示 */
+}
+.navbar-collapse li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 80px;
+  line-height: 1.2;
+  text-align: center;
+  margin: 4px 0;
+}
+
 @media (max-width: 768px) {
   .container {
     margin: 0px 12px;
@@ -697,7 +710,7 @@ h3 {
     display: none;
   }
   .header .menu .menu-span {
-    display: contents;
+    display: block;
   }
   .banner .bannerTitle {
     font-size: 48px;
@@ -838,5 +851,10 @@ h3 {
   .questions .questionList {
     width: 100%;
     padding: 20px 25px 20px 20px;
+  }
+  .navbar-collapse {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }/*# sourceMappingURL=all.css.map */

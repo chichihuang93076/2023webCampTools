@@ -579,6 +579,22 @@ h3 {
   }
 }
 
+// menu- mobile ------
+.navbar-collapse {
+  display: none; /* 在電腦版時不顯示 */
+
+  li a {
+    color: $txt-white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 80px;
+    line-height: 1.2;
+    text-align: center;
+    margin: 4px 0;
+  }
+}
+
+//  手機 ----
 @media (max-width: 768px) {
   .container {
     margin: 0px 12px;
@@ -591,7 +607,7 @@ h3 {
         display: none;
       }
       .menu-span {
-        display: contents;
+        display: block;
       }
     }
   }
@@ -759,5 +775,12 @@ h3 {
       width: 100%;
       padding: 20px 25px 20px 20px;
     }
+  }
+
+  //menu-mobile
+  .navbar-collapse {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
