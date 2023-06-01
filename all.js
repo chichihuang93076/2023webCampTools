@@ -20,8 +20,8 @@ function getData({ type, sort, page, search }) {
     worksData = res.data.ai_works.data;
     pagesData = res.data.ai_works.page;
 
-    console.log("worksData", worksData);
-    console.log("pagesData", pagesData);
+    //console.log("worksData", worksData);
+    // console.log("pagesData", pagesData);
 
     renderWorks();
     renderpages();
@@ -56,7 +56,7 @@ function renderWorks() {
   `;
   });
 
-  if (works != "") {
+  if (works !== "") {
     toolslist.innerHTML = works;
   }
 }
@@ -68,12 +68,10 @@ function renderpages() {
     pages += `<li><a class="btn3" href="#"><span class="material-icons">
               keyboard_arrow_left</span></a></li>`;
   }
-  for (i = 0; i < pagesData.total_pages; i++) {
-    if (i + 1 == pagesData.current_page) {
-      pages += `<li><a class="btn3 active" href="#">${i + 1}</a></li>`;
-    } else {
-      pages += `<li><a class="btn3" href="#">${i + 1}</a></li>`;
-    }
+  for (i = 1; i <= pagesData.total_pages; i++) {
+    pages += `<li><a class="btn3 ${
+      i == pagesData.current_page ? "active" : ""
+    } active" href="#">${i}</a></li>`;
   }
   if (pagesData.has_next) {
     pages += `<li><a class="btn3" href="#"><span class="material-icons">
@@ -84,17 +82,56 @@ function renderpages() {
   }
 }
 
-$("#filterbtn").on("click", function () {
-  this.classList.toggle("active");
+// 搜尋
+const search = document.querySelector("#search");
+search.addEventListener("keydown", (e) => {
+  if (e.keyCode === 13) {
+    data.search = search.value;
+    data.page = 1;
+    //console.log(data);
+    getData(data);
+  }
 });
 
-$("#filtersort").on("click", function () {
-  this.classList.toggle("active");
+const filtersort = document.querySelector("#filtersort");
+//  由新到舊 -> sort = 0
+$("#filtersort").on("click", (e) => {
+  e.preventDefault();
+  // console.log(e.target.innerHTML);
+  e.target.classList.toggle("active");
+  if (data.sort === 0) {
+    data.sort = 1;
+    e.target.innerHTML =
+      '由舊到新<span class="material-icons">keyboard_arrow_down</span>';
+  } else {
+    data.sort = 0;
+    e.target.innerHTML =
+      '由新到舊<span class="material-icons">keyboard_arrow_down</span>';
+  }
+  getData(data);
 });
 
-$(".btn2").on("click", function () {
-  console.log(this);
-  this.classList.toggle("active");
+const filterbtn = document.querySelector("#filterbtn");
+$("#filterbtn").on("click", (e) => {
+  e.preventDefault();
+  e.target.classList.toggle("active");
+});
+
+// 切換作品類型
+const filterbtns = document.querySelectorAll(".btn2");
+filterbtns.forEach((item) => {
+  //console.log(item);
+  item.addEventListener("click", (e) => {
+    e.preventDefault();
+    //console.log(e.target);
+    e.target.classList.toggle("active");
+    if (item.textContent === "全部") {
+      data.type = "";
+    } else {
+      data.type = item.textContent;
+    }
+    getData(data);
+  });
 });
 
 $(".backtoTop").on("click", () => {
