@@ -95,17 +95,17 @@ search.addEventListener("keydown", (e) => {
 
 const filtersort = document.querySelector("#filtersort");
 //  由新到舊 -> sort = 0
-$("#filtersort").on("click", (e) => {
+filtersort.addEventListener("click", (e) => {
   e.preventDefault();
   // console.log(e.target.innerHTML);
   e.target.classList.toggle("active");
   if (data.sort === 0) {
     data.sort = 1;
-    e.target.innerHTML =
+    filtersort.innerHTML =
       '由舊到新<span class="material-icons">keyboard_arrow_down</span>';
   } else {
     data.sort = 0;
-    e.target.innerHTML =
+    filtersort.innerHTML =
       '由新到舊<span class="material-icons">keyboard_arrow_down</span>';
   }
   getData(data);
