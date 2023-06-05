@@ -15,13 +15,15 @@ const data = {
 };
 
 function getData({ type, sort, page, search }) {
-  const apiUrl = `${apiPath}/api/v1/works?sort=${sort}`;
+  const apiUrl = `${apiPath}/api/v1/works?sort=${sort}&page=${page}&${
+    type ? `type=${type}&` : ""
+  }${search ? `search=${search}` : ""}`;
   axios.get(apiUrl).then((res) => {
     worksData = res.data.ai_works.data;
     pagesData = res.data.ai_works.page;
 
-    //console.log("worksData", worksData);
-    // console.log("pagesData", pagesData);
+    console.log("worksData", worksData);
+    //console.log("pagesData", pagesData);
 
     renderWorks();
     renderpages();
@@ -65,21 +67,48 @@ function renderWorks() {
 function renderpages() {
   let pages = "";
   if (pagesData.has_pre) {
-    pages += `<li><a class="btn3" href="#"><span class="material-icons">
+    pages += `<li><a class="btn3" href="#"><span class="material-icons" data-page="keyboard_arrow_left">
               keyboard_arrow_left</span></a></li>`;
   }
   for (i = 1; i <= pagesData.total_pages; i++) {
     pages += `<li><a class="btn3 ${
       i == pagesData.current_page ? "active" : ""
-    } active" href="#">${i}</a></li>`;
+    } " href="#" data-page="${i}">${i}</a></li>`;
   }
   if (pagesData.has_next) {
-    pages += `<li><a class="btn3" href="#"><span class="material-icons">
+    pages += `<li><a class="btn3" href="#" ><span class="material-icons" data-page="keyboard_arrow_right">
               keyboard_arrow_right</span></a></li>`;
   }
-  if (pages !== "") {
-    paginationList.innerHTML = pages;
-  }
+
+  paginationList.innerHTML = pages;
+
+  changePage(pagesData);
+}
+
+// 切換分頁
+function changePage(pagesData) {
+  const pageLinks = document.querySelectorAll("a.btn3");
+  let pageId = "";
+  pageLinks.forEach((item) => {
+    item.addEventListener("click", (e) => {
+      e.preventDefault();
+      console.log(e.target.dataset.page);
+      pageId = e.target.dataset.page;
+      if (e.target.dataset.page == "keyboard_arrow_right") {
+        if (pagesData.current_page < pagesData.total_pages) {
+          data.page = Number(pagesData.current_page) + 1;
+        }
+      } else if (e.target.dataset.page == "keyboard_arrow_left") {
+        if (pagesData.current_page > 1) {
+          data.page = Number(pagesData.current_page) - 1;
+        }
+      } else {
+        data.page = Number(pageId);
+      }
+
+      getData(data);
+    });
+  });
 }
 
 // 搜尋
@@ -122,8 +151,8 @@ const filterbtns = document.querySelectorAll(".btn2");
 filterbtns.forEach((item) => {
   //console.log(item);
   item.addEventListener("click", (e) => {
-    e.preventDefault();
-    //console.log(e.target);
+    //e.preventDefault(item.textContent);
+    console.log(item.textContent);
     e.target.classList.toggle("active");
     if (item.textContent === "全部") {
       data.type = "";
