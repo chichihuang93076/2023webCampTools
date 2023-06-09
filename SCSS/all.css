@@ -3,6 +3,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@import url("<https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap>");
 html,
 body,
 div,
@@ -162,7 +163,8 @@ body {
 }
 
 .container {
-  max-width: 1296px;
+  padding: 0 12px;
+  max-width: 1320px;
   margin: 0 auto;
 }
 
