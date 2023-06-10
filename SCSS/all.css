@@ -379,13 +379,10 @@ a {
 }
 
 .recommendList {
-  display: flex;
-  justify-content: space-between;
   margin-bottom: 160px;
 }
 
 .recommendListCard {
-  width: 32%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -723,7 +720,7 @@ a {
   border-radius: 16px;
 }
 .questions .questionList .qa-item.active {
-  border: 1px solid #FFFFFF;
+  border: 1px solid #ffffff;
 }
 .questions .questionList .qa-item:hover {
   border-color: #ffffff;
@@ -785,7 +782,6 @@ a {
   }
   .recommendList {
     margin: 0px 12px;
-    flex-direction: column;
   }
   .recommendListCard {
     width: 100%;

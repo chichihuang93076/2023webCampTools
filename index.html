@@ -8,6 +8,7 @@
   <title>AI 工具王 - 產品優勢卡片設計</title>
   <link rel="stylesheet" href="SCSS/all.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
 </head>
 
 <body>
@@ -87,9 +88,14 @@
     </ul>
   </div>
 
-  <div class="recommend container">
-    <ul class="recommendList">
-      <li class="recommendListCard">
+<div class="recommend container">
+<!-- Slider main container -->
+<div class="swiper">
+  <!-- Additional required wrapper -->
+  <div class="swiper-wrapper recommendList">
+    <!-- Slides -->
+    <div class="swiper-slide">
+      <div class="recommendListCard">
         <div class="recommand-icon">
           <span class="material-icons">star</span>
           <span class="material-icons">star</span>
@@ -106,8 +112,10 @@
             <p>ABC科技有限公司</p>
           </div>
         </div>
-      </li>
-      <li class="recommendListCard">
+      </div>
+    </div>
+    <div class="swiper-slide">
+      <div class="recommendListCard">
         <div class="recommand-icon">
           <span class="material-icons">star</span>
           <span class="material-icons">star</span>
@@ -124,8 +132,10 @@
             <p>XYZ 醫療器材有限公司</p>
           </div>
         </div>
-      </li>
-      <li class="recommendListCard">
+      </div>
+    </div>
+    <div class="swiper-slide">
+      <div class="recommendListCard">
         <div class="recommand-icon">
           <span class="material-icons">star</span>
           <span class="material-icons">star</span>
@@ -142,9 +152,22 @@
             <p>EFG 銀行</p>
           </div>
         </div>
-      </li>
-    </ul>
+      </div>
+    </div>
+    
   </div>
+  <!-- If we need pagination -->
+  <div class="swiper-pagination"></div>
+
+  <!-- If we need navigation buttons 
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+  -->
+  <!-- If we need scrollbar -->
+  <div class="swiper-scrollbar"></div>
+  </div>
+
+</div>
 
   <div class="tools">
     <div class="container">
@@ -324,6 +347,7 @@
     </button>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
   <script src="tools.js"></script>

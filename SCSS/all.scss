@@ -1,6 +1,5 @@
 @import "reset";
 
-
 $maincolor: #020202;
 $txt-white: #ffffff;
 $txt-black: #020202;
@@ -249,13 +248,10 @@ a {
 
 // ---- recommend  -----
 .recommendList {
-  display: flex;
-  justify-content: space-between;
   margin-bottom: 160px;
 }
 
 .recommendListCard {
-  width: 32%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -601,37 +597,35 @@ a {
   padding: 160px 0px 160px 0px;
   border-bottom: 1px solid #ffffff;
   .questionList {
-    width: 66%;  
+    width: 66%;
     /* 常見問題區塊 */
-.d-none {
-  display: none;
-}
+    .d-none {
+      display: none;
+    }
 
-.d-block {
-  display: block;
-}
+    .d-block {
+      display: block;
+    }
 
-.qa-item {
-  padding: 20px 40px;
-  border: 1px solid #525252;
-  border-radius: 16px;
-}
+    .qa-item {
+      padding: 20px 40px;
+      border: 1px solid #525252;
+      border-radius: 16px;
+    }
 
-.qa-item.active {
-  border: 1px solid #FFFFFF;
-}
+    .qa-item.active {
+      border: 1px solid #ffffff;
+    }
 
-.qa-item:hover {
-  border-color: #ffffff;
-}
+    .qa-item:hover {
+      border-color: #ffffff;
+    }
 
-.collapse-content p.show {
-  display: block;
-}
-  
+    .collapse-content p.show {
+      display: block;
+    }
   }
 }
-
 
 // menu- mobile ------
 .navbar-collapse {
@@ -698,7 +692,6 @@ a {
 
   .recommendList {
     margin: 0px 12px;
-    flex-direction: column;
   }
   .recommendListCard {
     width: 100%;
@@ -837,5 +830,4 @@ a {
     align-items: center;
     justify-content: center;
   }
-
 }
