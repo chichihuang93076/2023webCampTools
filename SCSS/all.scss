@@ -188,6 +188,27 @@ a {
   width: 42%;
   margin: 160px 0px 160px 0px;
 }
+// 箭頭動畫
+@keyframes movingTop {
+  33% {
+    transform: translateY(0%);
+  }
+  50% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-120%);
+  }
+}
+.animation1 {
+  animation: 5s ease-in-out infinite 1s movingTop;
+}
+.animation2 {
+  animation: 5s ease-in-out infinite 1.5s movingTop;
+}
+.animation3 {
+  animation: 5s ease-in-out infinite 2s movingTop;
+}
 
 // service
 .serviceTitle {
