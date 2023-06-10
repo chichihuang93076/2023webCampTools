@@ -193,7 +193,7 @@ h3 {
 
 .startbtn {
   color: #ffffff;
-  display: flex;
+  display: inline-block;
   flex-direction: row;
   align-items: center;
   text-align: center;
@@ -307,10 +307,6 @@ a {
   display: none;
 }
 
-.banner {
-  display: flex;
-  flex-direction: column;
-}
 .banner .bannerTitle {
   width: 74%;
   margin-bottom: 40px;
@@ -318,8 +314,7 @@ a {
 
 .bannerAnimation {
   display: flex;
-  align-self: end;
-  width: 42%;
+  justify-content: flex-end;
   margin: 160px 0px 160px 0px;
 }
 
@@ -788,6 +783,9 @@ a {
     align-self: center;
     width: 100%;
   }
+  .partenerlogo {
+    overflow-x: auto;
+  }
   .serviceTitle {
     flex-direction: column;
     margin-bottom: 48px;
@@ -802,12 +800,6 @@ a {
   .serviceListCard {
     width: 100%;
     margin-bottom: 12px;
-  }
-  .recommendList {
-    margin: 0px 12px;
-  }
-  .recommendListCard {
-    width: 100%;
   }
   .tools {
     border-radius: 20px;

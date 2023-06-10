@@ -56,7 +56,7 @@ h3 {
 
 .startbtn {
   color: $txt-white;
-  display: flex;
+  display: inline-block;
   flex-direction: row;
   align-items: center;
   text-align: center;
@@ -174,8 +174,6 @@ a {
 
 //---- banner
 .banner {
-  display: flex;
-  flex-direction: column;
   .bannerTitle {
     width: 74%;
     margin-bottom: 40px;
@@ -184,8 +182,7 @@ a {
 
 .bannerAnimation {
   display: flex;
-  align-self: end;
-  width: 42%;
+  justify-content: flex-end;
   margin: 160px 0px 160px 0px;
 }
 // 箭頭動畫
@@ -695,6 +692,10 @@ a {
     width: 100%;
   }
 
+  .partenerlogo {
+    overflow-x: auto;
+  }
+
   .serviceTitle {
     flex-direction: column;
     margin-bottom: 48px;
@@ -709,13 +710,6 @@ a {
   .serviceListCard {
     width: 100%;
     margin-bottom: 12px;
-  }
-
-  .recommendList {
-    margin: 0px 12px;
-  }
-  .recommendListCard {
-    width: 100%;
   }
 
   .tools {
